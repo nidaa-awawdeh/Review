@@ -4,12 +4,12 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
 const dishRouter = require('./routes/dishRouter');
-app.use('/dishes', dishRouter);
+
+const app = express();
 
 const hostname = 'localhost';
 const port = 3000;
 
-const app = express();
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use('/dishes', dishRouter);
